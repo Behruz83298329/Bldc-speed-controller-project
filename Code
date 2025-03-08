@@ -1,0 +1,22 @@
+#include <Servo.h>
+
+Servo esc;  // ESC obyekti
+
+void setup() {
+  esc.attach(9);  // ESC signali Arduino Nano D9 piniga ulangan
+  esc.writeMicroseconds(1000);  // ESC tayyorlash uchun minimal tezlik
+  delay(3000);  // ESC ishga tushishini kutamiz
+}
+
+void loop() {
+  esc.writeMicroseconds(1200);  // Sekin aylanish
+  delay(3000);
+
+  esc.writeMicroseconds(1500);  // O‘rtacha tezlik
+  delay(3000);
+
+  esc.writeMicroseconds(2000);  // Maksimal tezlik
+  while (true) {
+    // Bu joyda kod to‘xtaydi va motor maksimal tezlikda ishlayveradi
+  }
+}
